@@ -1,0 +1,26 @@
+name: Poutine Level 2
+on:
+  issue_comment:
+    types: [deleted]
+    
+permissions: {}
+
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
+
+jobs:
+  pulled_pork:
+    runs-on: self-hosted
+    if: contains(github.event.issue_comment.comment, 'smoke it')
+    timeout-minutes: 1
+    permissions:
+      id-token: write
+    env:
+      ACTIONS_RUNNER_DEBUG: true
+      ACTIONS_STEP_DEBUG: true
+    steps:
+      - uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
+        with:
+          egress-policy: audit
+      - run: echo "Sorry, this level is not ready yet.... or is it?!"
